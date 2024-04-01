@@ -3,13 +3,10 @@
 👋🏾, welcome to the GitHub repository dedicated to my Turing Pi 2 cluster project. This repository serves as a living document, providing a detailed account of the build process, configurations, and ongoing developments of my Turing Pi 2 cluster. This project is an exploration of its potential, documented to aid others on similar journeys.
 
 ## Board
-`I/O`
+`I/O` & `Dimensions`
 
-![image](https://github.com/samueljoli/turing_pi_cluster/assets/12755671/3ac77958-0fe7-42bb-a5ed-1bf13d45c070)
+<img width="1118" alt="image" src="https://github.com/samueljoli/turing_pi_cluster/assets/12755671/2a1a66f1-f94f-4aea-9bbb-d1188a58caf9">
 
-`Dimensions`
-
-![image](https://github.com/samueljoli/turing_pi_cluster/assets/12755671/b09b7d1e-b521-491d-9078-440e4212b85c)
 
 ## Compute modules
 `Raspberry Pi CM4` x `4`
