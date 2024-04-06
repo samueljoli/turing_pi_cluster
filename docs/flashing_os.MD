@@ -24,7 +24,7 @@ The SD card should have the `(external, physical)` markers:
    1:                  Apple_HFS ⁨balenaEtcher 1.18.11⁩    252.8 MB   disk6s1
 ```
 
-**Partitioning the SD Card:**
+**Partition the SD Card:**
 > [!NOTE]
 > Raspberry Pi's have a special boot procedure that uses a FAT partition [^2] and the GPU [^3].
 
@@ -35,11 +35,29 @@ diskutil partitionDisk /dev/disk4 MBR FAT32 ALPINE 100%
 
 ### Step 2
 
-**Download `Alpine Linux` and write to SD card:**
+**Download `Alpine Linux` `v3.19` and write to SD card:**
 
 ```bash
-curl -L http://dl-cdn.alpinelinux.org/alpine/v3.12/releases/aarch64/alpine-rpi-3.12.1-aarch64.tar.gz | tar -xz -C /Volumes/ALP/
+curl -L http://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-rpi-3.19.1-aarch64.tar.gz | tar -xz -C /Volumes/ALP/
+``` 
+
+### Step 3
+
+**Configure boot options:**
+
 ```
+cd /Volumes/ALP/
+```
+
+you can disable audio, wifi, Bluetooth, etc and enable UART, configure GPU mem.
+```
+echo 'dtparam=audio=off'          >> usercfg.txt
+echo 'dtoverlay=pi3-disable-wifi' >> usercfg.txt
+echo 'enable_uart=1'              >> usercfg.txt
+echo 'gpu_mem=64'                 >> usercfg.txt
+echo 'disable_overscan=1'         >> usercfg.txt
+```
+
 
 [^1]: Alpine Linux is a Linux distribution designed to be small, simple, and secure. It uses musl, BusyBox, and OpenRC instead of the more commonly used glibc, GNU Core Utilities, and systemd. I decided on this distroy to reduce image size and improve startup times.
 
