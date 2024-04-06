@@ -3,6 +3,7 @@
 ## Overview
 
 **What you'll be doing**
+
 During this step, you'll be:
 - preparing your SD card(s)
 - downloading `Alpine Linux` and writing it to the SD card
