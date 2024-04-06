@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide assumes you're on `macOS` (arm 🦾)
+> This guide assumes you're on `macOS` (arm 🦾)
 
 **What you'll be doing**
 
@@ -12,7 +12,9 @@ This guide assumes you're on `macOS` (arm 🦾)
 
 
 ### Step 1
+
 **List Available Disks:**
+
 ```bash
 diskutil list
 ```
@@ -29,6 +31,7 @@ The SD card should have the `(external, physical)` markers:
 > Raspberry Pi's have a special boot procedure that uses a FAT partition [^2] and the GPU [^3].
 
 Create a single partition formatted with a FAT32 file system of type Master Boot Record  and label it "ALPINE", and allocate 100% of the disk's available space to this partition.
+
 ```bash
 diskutil partitionDisk /dev/disk4 MBR FAT32 ALPINE 100%
 ```
@@ -38,15 +41,20 @@ diskutil partitionDisk /dev/disk4 MBR FAT32 ALPINE 100%
 **Download `Alpine Linux` `v3.19` and write to SD card:**
 
 ```bash
-curl -L http://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-rpi-3.19.1-aarch64.tar.gz | tar -xz -C /Volumes/ALP/
+curl -L http://dl-cdn.alpinelinux.org/alpine/v3.19/releases/aarch64/alpine-rpi-3.19.1-aarch64.tar.gz | tar -xz -C /Volumes/ALPINE/
 ``` 
+
+**Ensure Extraction Success:**
+```
+ls /Volumes/ALPINE/
+```
 
 ### Step 3
 
 **Configure boot options:**
 
 ```
-cd /Volumes/ALP/
+cd /Volumes/ALPINE/
 ```
 
 you can disable audio, wifi, Bluetooth, etc and enable UART, configure GPU mem.
