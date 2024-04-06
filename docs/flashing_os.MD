@@ -1,6 +1,7 @@
-# Installing Alpine on RPI 4 (macOS arm 🦾)
+# Installing Alpine on Raspberry Pi 4
 
 ## Overview
+This guide assumes you're on `macOS` (arm 🦾)
 
 **What you'll be doing**
 
